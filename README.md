@@ -2,6 +2,10 @@
 
 Manage saved links to read from terminal.
 
+## Download
+
+You can compile the project or download the binary from the [release page](https://github.com/yabirgb/gpread/releases/)
+
 ## Basic commands
 
 - To store a new link in the database
