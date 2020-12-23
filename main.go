@@ -75,8 +75,19 @@ func main(){
 	}
 
 	FILEPATH := home + "/" + FILENAME
+	
+	
 
-	file, _ := ioutil.ReadFile(FILEPATH)
+	file, errReadingFile := ioutil.ReadFile(FILEPATH)
+	
+	if errReadingFile != nil{
+		fmt.Println("Dabase not found. Creating file at", FILEPATH)
+		err := ioutil.WriteFile(FILEPATH, []byte("articles:"), 0755)
+		if err != nil{
+			fmt.Println(err)
+			return
+		}
+	}
 
 	var data T
 	err := yaml.Unmarshal(file, &data)
@@ -113,7 +124,7 @@ func main(){
 	marshaled, _ := yaml.Marshal(&data)
 	//fmt.Println(string(marshaled))
 	
-	werror := ioutil.WriteFile(FILEPATH, marshaled, 0644)
+	werror := ioutil.WriteFile(FILEPATH, marshaled, 0744)
 
 	if werror != nil {
 		fmt.Println(werror)
