@@ -14,7 +14,7 @@ type Document struct{
 	Url string
 	Added int64 // date of the addition
 	Read bool // if the url has been read or not
-	Hn string // link to hn comments if exists
+	Hn []string // link to hn comments if exists
 }
 
 type T struct{
@@ -29,7 +29,7 @@ func addToDocument(url string, data *T){
 		Url: url,
 		Added: time.Now().Unix(),
 		Read: false,
-		Hn: "",
+		Hn: make([]string,0),
 	}
 
 	data.Articles = append([]Document{newArticle},data.Articles...)
