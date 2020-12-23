@@ -6,15 +6,15 @@ Manage saved links to read from terminal.
 
 - To store a new link in the database
 
-		gpread add url
+	  gpread add url
 
 - You can get the last added article that you haven't read from
 
-		gpread pop
+	  gpread pop
 
 - To mark the last article as read use
 
-		gpread read
+	  gpread read
 
 ## TODO
 
