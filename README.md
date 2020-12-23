@@ -16,6 +16,10 @@ Manage saved links to read from terminal.
 
 	  gpread read
 
+## Config
+
+By default the database file is located at `$HOME/.gqread.yaml`
+
 ## TODO
 
 - [ ] Fetch comments for urls from hackernews
